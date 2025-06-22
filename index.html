@@ -194,7 +194,7 @@
 <body>
     <h1>
         MAER CATALUNYA
-        <div class="update-box">Actualitzat el 18/06/25</div>
+        <div class="update-box">Actualitzat el 22/06/25</div>
     </h1>
     <div id="map"></div>
 
@@ -274,6 +274,7 @@
             "EC-FOQ": "https://i.imgur.com/i6AnX3C.png",
             "EC-IOP": "https://i.imgur.com/rBCM0vo.png",
             "EC-LHD": "https://i.imgur.com/Pex61Ef.png",
+            "Per confirmar (III)": "https://i.imgur.com/LIw2p1I.png",
         };
 
         const defaultImg = "https://i.imgur.com/U8Tl9ZD.png";
@@ -318,6 +319,7 @@
             "EC-FOQ": "Aeroport de Sabadell",
             "EC-IOP": "Aeroport de Sabadell",
             "EC-LHD": "Heliport del Port de Barcelona"
+            "Per confirmar (III)": "Aeroport de Reus"
         };
 
         // Objecte amb els tipus d'aeronau
@@ -359,7 +361,8 @@
             "EC-LFP": "Leonardo AW139",
             "EC-FOQ": "Airbus H125",
             "EC-IOP": "Vulcanair P68",
-            "EC-LHD": "Eurocopter AS355"
+            "EC-LHD": "Eurocopter AS355",
+            "Per confirmar (III)": "Air Tractor AT-802A",
         };
 
         const helicopterPositions = [
@@ -401,6 +404,7 @@
             { lat: 41.5177, lon: 2.1107, codi: "EC-FOQ", tipo: 'TRANSIT', subtext: "Trànsit 04" },
             { lat: 41.5172, lon: 2.1087, codi: "EC-IOP", tipo: 'TRANSIT', subtext: "Trànsit 81" },
             { lat: 41.3643, lon: 2.1830, codi: "EC-LHD", tipo: 'TRANSIT', subtext: "Trànsit 07" },
+            { lat: 41.1491, lon: 1.1637, codi: "Per confirmar (III)", tipo: 'AVA', subtext: "AZ0" },
         ];
 
         function crearHelicopter({ lat, lon, codi, tipo, subtext }, zoomLevel) {
