@@ -157,6 +157,23 @@
             text-align: center;
             margin-top: 10px;
         }
+        /* Estilos para el popup con imagen grande */
+        .helicopter-popup-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 10px auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .popup-info {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .popup-info b {
+            color: #2c3e50;
+        }
 
         @media (max-width: 768px) {
             #map {
@@ -187,6 +204,11 @@
             .leaflet-control-layers-expanded {
                 max-width: 200px;
                 max-height: 250px;
+            }
+            
+            /* Ajustes para móvil en el popup */
+            .helicopter-popup-image {
+                max-width: 200px;
             }
         }
     </style>
@@ -442,13 +464,19 @@
             // Obtenir les dades de ubicació i tipus d'aeronau
             const ubicacio = ubicacions[codi] || "Ubicació desconeguda";
             const aeronau = tipusAeronau[codi] || "Tipus desconegut";
+            const imgSrcPopup = helicopterImages[codi] || defaultImg;
 
             return L.marker([lat, lon], { icon: customIcon }).bindPopup(`
-                <b>Matrícula:</b> ${codi}<br>
-                <b>Codi:</b> ${subtext}<br>
-                <b>Ubicació:</b> ${ubicacio}<br>
-                <b>Tipus d'Aeronau:</b> ${aeronau}<br>
-                <b>Funció:</b> ${tipo}
+                <div class="popup-content">
+                    <img src="${imgSrcPopup}" class="helicopter-popup-image" alt="${codi}">
+                    <div class="popup-info">
+                        <b>Matrícula:</b> ${codi}<br>
+                        <b>Codi:</b> ${subtext}<br>
+                        <b>Ubicació:</b> ${ubicacio}<br>
+                        <b>Tipus d'Aeronau:</b> ${aeronau}<br>
+                        <b>Funció:</b> ${tipo}
+                    </div>
+                </div>
             `);
         }
 
